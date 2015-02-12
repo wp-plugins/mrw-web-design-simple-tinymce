@@ -18,9 +18,11 @@ This plugin creates a single row of buttons containing the following:
 
 "Styleselect,"* Bold, Italic, Add/Edit Link, Break Link, Indent, Outdent, Paste as Plain Text,** Remove Styles, Special Characters, Undo, Redo, Help, Distraction Free Mode.
 
-\* The Styleselect contains Headings 2-4 and Blockquote as well as Strikethrough, Subscript, Superscript, and Preformatted in an "Other Formats" submenu.
+This plugin also provides a simple-yet-powerful filter (see below) for developers to add the ability to apply custom styles with the editor.
 
-\*\* This plugin pairs deliciously with [Paste as Plain Text](https://wordpress.org/plugins/paste-as-plain-text/).
+*\* The Styleselect contains Headings 2-4 and Blockquote as well as Strikethrough, Subscript, Superscript, and Preformatted in an "Other Formats" submenu.*
+
+*\*\* This plugin pairs deliciously with [Paste as Plain Text](https://wordpress.org/plugins/paste-as-plain-text/).*
 
 > I built this plugin for use on client sites and share it in hopes that others will find it helpful. I'm highly motivated to maintain it since I use it for other people.
 > 
@@ -39,23 +41,48 @@ This plugin replaces the "formatselect" with the "styleselect" for its added sup
 == Installation ==
 
 1. Upload `/mrwweb-simple-tinymce/` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Activate the plugin through the "Plugins" menu in WordPress
+1. Write away, right away!
+
+\- OR -
+
+1. From your WordPress site's dashboard, go to Plugins > Add New.
+1. Search for "MRW Web Design Simple TinyMCE."
+1. The plugin should be the first result. Click "Install."
+1. Allow the plugin to install, then click "Activate."
+1. Write away, right away!
 
 == Frequently Asked Questions ==
 
-None yet. Will add as questions are asked.
+= I need the "Insert More Tag" button back. How do I do that? =
+
+This is the one button that might be legitimately missing from this plugin, though I find it's rarely used. If you need it, use the following snippet in your theme's `functions.php` file. (Since the More Tag is used by a theme, the `functions.php` files is a good place for it.)
+
+`
+/* Add "Insert More Tag" Button in Text Editor */
+add_filter( 'mce_buttons', 'mrw_more_tag_button' );
+function mrw_more_tag_button( $buttons ) {
+    array_splice($buttons, -4, 0, 'wp_more');
+    return $buttons;
+}
+`
+
+== Notes ==
+
+* The plugin requires WordPress 4.1+ because of the new Distraction Free Writing Mode. The plugin should otherwise work well in WordPress 3.9+. The plugin will not work in any earlier versions.
 
 == Screenshots ==
 
 1. The editor in all its minimal glory. This shows the default set of buttons and styles.
 
-2. "Link Button" is an example of a text style that can be added with the `mrw_mce_text_style` filter. In this example, it's grayed-out by default since it can only be applied to links!
+2. "Link Button" is an example of a text style that can be added with the [`mrw_mce_text_style` filter](https://gist.github.com/mrwweb/9937127#file-mrw-tinymce-filter-example-php). In this example, it's grayed-out by default since it can only be applied to links!
 
 == Changelog ==
 = 1.0.4 (Feb 6, 2015) =
 * Cleaned up and submitted to the repository.
 * Renamed "MRW Web Design Simple TinyMCE"
 * New readme, screenshots, etc.
+* Feb 12, 2015: No version update, but revised screenshots and improved readme.
 
 = 1.0.3 (Jan 5, 2015) =
 * Change "fullscreen" to "dfw" for Distraction Free Writing Mode support in 4.1.
