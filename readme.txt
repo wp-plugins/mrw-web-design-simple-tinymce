@@ -14,7 +14,7 @@ Get rid of bad and obscure TinyMCE buttons. Move the rest to a single top row. C
 
 Out of the box, the TinyMCE editor lets people do stupid or unnecessary things. When publishing content with a CMS, all formatting should be semantic and promote highly-readable content as much as possible.
 
-This plugin creates a single row of buttons containing the following:
+This plugin creates a single row of buttons containing the following (see also: plugin banner):
 
 "Styleselect,"* Bold, Italic, Add/Edit Link, Break Link, Indent, Outdent, Paste as Plain Text,** Remove Styles, Special Characters, Undo, Redo, Help, Distraction Free Mode.
 
@@ -30,7 +30,7 @@ This plugin also provides a simple-yet-powerful filter (see below) for developer
 
 = Filters =
 
-The plugin hooks early to the standard `mce_buttons`, `mce_buttons_2`, 	and `tiny_mce_before_init` filters so that this plugin is [easy to override](https://wordpress.org/plugins/mrw-web-design-simple-tinymce/other-notes/).
+The plugin hooks early to the standard `mce_buttons`, `mce_buttons_2`, 	and `tiny_mce_before_init` filters so that this plugin is easy to override.
 
 This plugin replaces the "formatselect" with the "styleselect" for its added support of custom CSS styles. There is easy-to-use filter for allowing the application of CSS classes in the editor: `mrw_mce_text_style`. You can find an [example of the filter's usage on the "Other Notes" tag](https://wordpress.org/plugins/mrw-web-design-simple-tinymce/other_notes/). See also:
 
