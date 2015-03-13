@@ -2,8 +2,8 @@
 Contributors: mrwweb
 Tags: TinyMCE, Editor Styles, Editor, Text Editor
 Requires at least: 4.1
-Tested up to: 4.1
-Stable tag: 1.0.5
+Tested up to: 4.2-beta1
+Stable tag: 1.1.0
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Get rid of bad and obscure TinyMCE buttons. Move the rest to a single top row. C
 
 == Description ==
 
-Out of the box, the TinyMCE editor lets people do stupid or unnecessary things. When publishing content with a CMS, all formatting should be semantic and promote highly-readable content as much as possible.
+When publishing content with a CMS, all formatting should be semantic and promote highly-readable content as much as possible. Out of the box, WordPress's TinyMCE configuration does not encourage either.
 
 This plugin creates a single row of buttons containing the following (see also: plugin banner):
 
@@ -30,7 +30,7 @@ This plugin also provides a simple-yet-powerful filter (see below) for developer
 
 = Filters =
 
-The plugin hooks early to the standard `mce_buttons`, `mce_buttons_2`, 	and `tiny_mce_before_init` filters so that this plugin is easy to override.
+The plugin hooks early to the standard `mce_buttons`, `mce_buttons_2`, 	and `tiny_mce_before_init` filters so that it's easy to override.
 
 This plugin replaces the "formatselect" with the "styleselect" for its added support of custom CSS styles. There is easy-to-use filter for allowing the application of CSS classes in the editor: `mrw_mce_text_style`. You can find an [example of the filter's usage on the "Other Notes" tag](https://wordpress.org/plugins/mrw-web-design-simple-tinymce/other_notes/). See also:
 
@@ -68,7 +68,7 @@ Below we have examples for adding back a button and adding a new "Text Styles" s
 
 = Add the "Insert More Tag" Button =
 
-This is the one button that might be legitimately missing from this plugin, though I find it's rarely used. If you need it, use the following snippet in your theme's `functions.php` file. (Since the More Tag is used by a theme, the `functions.php` files is a good place for it.)
+This is the one button that might legitimately be missing from this plugin for a small subset of users. If you need it, use the following snippet in your theme's `functions.php` file. (Since the More Tag is used by a theme, the `functions.php` files is a good place for it.)
 
 `
 /* Add "Insert More Tag" Button in Text Editor After charmap */
@@ -140,6 +140,10 @@ function mrw_add_text_styles_example( $styles ) {
 
 == Changelog ==
 
+= 1.1.0 (Mar 13, 2015) =
+* Hide `wp_help` button on mobile just like WordPress 4.2 ([#31161](https://core.trac.wordpress.org/ticket/31161)).
+* Add `code` element to available "Other Formats."
+
 = 1.0.5 (Feb 13, 2015) =
 * Improved code formatting thanks to [@robneu](https://profiles.wordpress.org/fatmedia/)!
 * Add keys to the `$buttons` array filtered by `mce_buttons` for more intuitive button insertion.
@@ -166,6 +170,9 @@ function mrw_add_text_styles_example( $styles ) {
 * Initial release
 
 == Upgrade Notice ==
+= 1.1.0 =
+* Beating WordPress 4.2 to hiding `wp_help` on mobile. Adding `code` element to "Other Formats."
+
 = 1.0.5 =
 * Better formatting and inline documentation. BREAKING CHANGE: Remove `mrw_mce_style_formats` filter. I doubt you were using it.
 

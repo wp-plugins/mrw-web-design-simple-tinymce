@@ -3,7 +3,7 @@
 * Plugin Name: MRW Web Design Simple TinyMCE
 * Plugin URI: http://mrwweb.com/wordpress-plugins/mrw-web-design-simple-tinymce/
 * Description: Removes useless buttons and adds the ability to use more advanced features of TinyMCE. Disabling this plugin may remove features from your site!
-* Version: 1.0.5
+* Version: 1.1.0
 * Author: Mark Root-Wiley
 * Author URI: http://MRWweb.com
 * Text Domain: mrwweb-simple-tinymce
@@ -22,7 +22,7 @@ add_filter( 'mce_buttons', 'mrw_mce_buttons_1', 0 );
  * @see    http://codex.wordpress.org/TinyMCE_Custom_Buttons
  */
 function mrw_mce_buttons_1( $buttons ) {
-	return array(
+	$buttons = array(
 		0 => 'styleselect',
 		5 => 'bold',
 		10 => 'italic',
@@ -37,9 +37,14 @@ function mrw_mce_buttons_1( $buttons ) {
 		55 => 'charmap',
 		60 => 'undo',
 		65 => 'redo',
-		70 => 'wp_help',
 		75 => 'dfw',
 	);
+
+	if ( ! wp_is_mobile() ) {
+		$buttons[70] = 'wp_help'; 
+	}
+
+	return $buttons;
 }
 
 // Return an empty array for the second row of TinyMCE buttons.
@@ -103,6 +108,11 @@ function mrw_mce_init( $args ) {
 				array(
 					'title'  => __( 'pre', 'mrwweb-simple-tinymce' ),
 					'format' => 'pre',
+				),
+				array(
+					'title'  => __( 'Code', 'mrwweb-simple-tinymce' ),
+					'format' => 'code',
+					'icon'   => 'code',
 				),
 			),
 		),
