@@ -16,17 +16,19 @@ When publishing content with a CMS, all formatting should be semantic and promot
 
 This plugin creates a single row of buttons containing the following (see also: plugin banner):
 
-"Styleselect,"* Bold, Italic, Add/Edit Link, Break Link, Indent, Outdent, Paste as Plain Text,** Remove Styles, Special Characters, Undo, Redo, Help, Distraction Free Mode.
+> "Styleselect,"* Bold, Italic, Add/Edit Link, Break Link, Indent, Outdent, Paste as Plain Text,** Remove Styles, Special Characters, Undo, Redo, Help, Distraction Free Mode.
 
 This plugin also provides a simple-yet-powerful filter (see below) for developers to add the ability to apply custom styles with the editor.
 
-*\* The Styleselect contains Headings 2-4 and Blockquote as well as Strikethrough, Subscript, Superscript, and Preformatted in an "Other Formats" submenu.*
+*\* The Styleselect contains Headings 2-4 and Blockquote as well as Strikethrough, Subscript, Superscript, Preformatted, and Code (added in v1.1.0) in an "Other Formats" submenu.*
 
 *\*\* This plugin pairs deliciously with [Paste as Plain Text](https://wordpress.org/plugins/paste-as-plain-text/).*
 
 > I built this plugin for use on client sites and share it in hopes that others will find it helpful. I'm highly motivated to maintain it since I use it for other people.
 > 
-> However, **this is an opinionated plugin** and so major feature additions are unlikely and support will be limited to bugs and *basic* use of the filters.
+> However, **this is an opinionated plugin.** You can read an in-depth reasoning behind the decisions made by this plugin in the post ["A WordPress Formatting Manifesto."](http://mrwweb.com/wordpress-formatting-manifesto/)
+> 
+> Major feature additions are unlikely and support will be limited to bugs and *basic* use of the filters.
 
 = Filters =
 
@@ -37,6 +39,12 @@ This plugin replaces the "formatselect" with the "styleselect" for its added sup
 * [tinymce.com/wiki.php/Configuration:style_formats](http://tinymce.com/wiki.php/Configuration:style_formats)
 * [tinymce.com/wiki.php/Configuration:formats](http://tinymce.com/wiki.php/Configuration:formats)
 * [wordpress.stackexchange.com/a/128950/9844](http://wordpress.stackexchange.com/a/128950/9844)
+
+= Other Plugins by MRWweb =
+
+* [Feature a Page Widget](https://wordpress.org/plugins/feature-a-page-widget/) - Shows a summary of any Page in any sidebar..
+* [Post Status Menu Items](http://wordpress.org/plugins/post-status-menu-items/) - Adds post status links–e.g. "Draft" (7)–to post type admin menus.
+* [Advanced Custom Fields Repeater & Flexible Content Fields Collapser](http://wordpress.org/plugins/advanced-custom-field-repeater-collapser/) - Easier sorting for large repeated fields in the Advanced Custom Fields plugin.
 
 == Installation ==
 
